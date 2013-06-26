@@ -127,6 +127,10 @@ where [options] are:
         if opts[:spawn_delay]
           Resque::Pool.spawn_delay = opts[:spawn_delay] * 0.001
         end
+
+        if opts[:pidfile]
+          Resque::Pool.master_pidfile = opts[:pidfile]
+        end
       end
 
       def setup_environment(opts)
